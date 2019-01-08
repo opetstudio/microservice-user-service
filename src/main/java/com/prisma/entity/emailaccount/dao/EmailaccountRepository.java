@@ -29,4 +29,5 @@ public interface EmailaccountRepository extends PagingAndSortingRepository<TbEma
     // List<Emailaccount> findByOrganizationId(Long organizationId);
     // List<Emailaccount> findByCreatedbyOrderByCreatedonAsc(@Param("createdby") String createdby);
     // List<Emailaccount> findByCreatedbyOrderByCreatedonDesc(@Param("createdby") String createdby);
+    List findByEmail(@Param("email") String email);
 }

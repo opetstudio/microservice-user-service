@@ -1,0 +1,31 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: users-deployments
+  namespace: default
+  labels:
+    component: users
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: users
+  template:
+    metadata:
+      labels:
+        component: users
+    spec:
+      containers:
+      - name: users
+        image: opetstudio/user-service:0.0.11
+        env:
+        - name: POSTGRES_IP
+          valueFrom:
+            configMapKeyRef:
+              name: postgresdb
+              key: host
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
+              name: postgresdb
+              key: database-name

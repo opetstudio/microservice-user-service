@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import com.prisma.entity.user.model.TbUser;
 
+import org.springframework.data.mongodb.repository.MongoRepository;
 // import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
@@ -19,6 +20,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 // @Repository
 @RepositoryRestResource(collectionResourceRel = "user", path = "user")
 public interface UserRepository extends PagingAndSortingRepository<TbUser, String> {
+// public interface UserRepository extends MongoRepository<TbUser, String> {
     // { 'location' : { '$near' : [point.x, point.y], '$maxDistance' : distance}}
     // @Override
     // default Optional<TbUser> findById(String id) {

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    component: users
+  name: users-service
+spec:
+  ports:
+  - port: 8080
+  selector:
+    component: users
+  type: NodePort
